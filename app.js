@@ -21,7 +21,7 @@ let seattleStore = {
     }
   },
   renderList: function() {
-    let h3 = document.createElement('h2');
+    let h3 = document.createElement('h3');
     h3.textContent = 'Seattle';
     seattleStoreArticle.appendChild(h3);
     let ul = document.createElement('ul');
@@ -63,7 +63,7 @@ let tokyoStore = {
     }
   },
   renderList: function() {
-    let h3 = document.createElement('h2');
+    let h3 = document.createElement('h3');
     h3.textContent = 'Tokyo';
     tokyoStoreArticle.appendChild(h3);
     let ul = document.createElement('ul');
@@ -105,7 +105,7 @@ let dubaiStore = {
     }
   },
   renderList: function() {
-    let h3 = document.createElement('h2');
+    let h3 = document.createElement('h3');
     h3.textContent = 'Dubai';
     dubaiStoreArticle.appendChild(h3);
     let ul = document.createElement('ul');
@@ -147,7 +147,7 @@ let parisStore = {
     }
   },
   renderList: function() {
-    let h3 = document.createElement('h2');
+    let h3 = document.createElement('h3');
     h3.textContent = 'Paris';
     parisStoreArticle.appendChild(h3);
     let ul = document.createElement('ul');
@@ -189,7 +189,7 @@ let limaStore = {
     }
   },
   renderList: function() {
-    let h3 = document.createElement('h2');
+    let h3 = document.createElement('h3');
     h3.textContent = 'Lima';
     limaStoreArticle.appendChild(h3);
     let ul = document.createElement('ul');
