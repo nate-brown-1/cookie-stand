@@ -2,7 +2,29 @@ body {
   background-color: antiquewhite;
 }
 
-h2 {
+table {
+  margin: auto;
+  border-style: groove;
+  border-width: 3px;
+}
+
+thead {
+  background-color: pink;
+  color: black;
+}
+
+thead td {
+  border-style: groove;
+  border-width: 3px;
+}
+
+tbody {
+  background-color: aquamarine;
+  border-style: groove;
+  border-width: 3px;
+}
+
+h3 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

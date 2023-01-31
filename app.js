@@ -4,6 +4,32 @@ const HOUR_BLOCKS = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3
 
 let storeContainer = document.getElementById('salesDiv');
 
+// create table with javascript
+// works, creates header row with blank first cell followed by times in sequence
+function createStoreTable() {
+  let storeTable = document.createElement('table');
+  storeTable.setAttribute('id', 'storeTable');
+  storeContainer.appendChild(storeTable);
+  let storeTableHead = document.createElement('thead');
+  storeTable.appendChild(storeTableHead);
+  let storeTableHeaderRow = document.createElement('tr');
+  storeTableHead.appendChild(storeTableHeaderRow);
+  let tdHeaderBlank = document.createElement('td');
+  tdHeaderBlank.textContent = '\u00A0';
+  storeTableHeaderRow.appendChild(tdHeaderBlank);
+  let tdHeaderHours = document.createElement('td');
+  for (let i = 0; i < HOUR_BLOCKS.length; i++) {
+    let tdHeaderHours = document.createElement('td');
+    tdHeaderHours.textContent = `${HOUR_BLOCKS[i]}`;
+    storeTableHeaderRow.appendChild(tdHeaderHours);
+  }
+  let storeTableBody = document.createElement('tbody');
+  storeTableBody.setAttribute('id', 'storeTableBody');
+  storeTable.appendChild(storeTableBody);
+}
+createStoreTable();
+
+// constructor to create each store as an object
 function SalmonStore (name, min, max, avg) {
   this.name = name;
   this.min = min;
@@ -18,33 +44,24 @@ function SalmonStore (name, min, max, avg) {
     for (let i = 0; i < HOUR_BLOCKS.length; i++) {
       let cookiesThisHour = Math.round(this.avg * this.getRandomNumberOfCustomers());
       this.cookiesThisHourArray.push(cookiesThisHour);
-    }
+    };
   };
-  this.renderList = function() {
-    let storeArticle = document.getElementById(this.id);
+  this.renderDataRow = function() {
+    let storeTableBody = document.getElementById('storeTableBody');
     this.calculateCookiesThisHour();
-    let ul = document.createElement('ul');
+    let storeTableDataRow = document.createElement('tr');
+    storeTableBody.appendChild(storeTableDataRow);
+    let storeTableDataRowLabel = document.createElement('td');
+    storeTableDataRowLabel.textContent = `${this.name}`;
+    storeTableDataRow.appendChild(storeTableDataRowLabel);
     let cookieTotal = 0;
     for (let i = 0; i < HOUR_BLOCKS.length; i++) {
-      let li = document.createElement('li');
-      li.textContent = `${HOUR_BLOCKS[i]}: ${this.cookiesThisHourArray[i]} cookies`;
-      ul.appendChild(li);
+      let storeTableDataCell = document.createElement('td');
+      storeTableDataCell.textContent = `${this.cookiesThisHourArray[i]}`;
+      storeTableDataRow.appendChild(storeTableDataCell);
       cookieTotal += this.cookiesThisHourArray[i];
-    }
-    let li = document.createElement('li');
-    li.textContent = `Total: ${cookieTotal} cookies`;
-    ul.appendChild(li);
-    storeArticle.appendChild(ul);
-  }
-  this.renderStore = function() {
-    let storeArticle = document.createElement('article');
-    storeArticle.setAttribute('id', this.id);
-    storeContainer.appendChild(storeArticle);
-    let h3 = document.createElement('h3');
-    h3.textContent = `${this.name}`;
-    storeArticle.appendChild(h3);
-    this.renderList();
-  }
+    };
+  };
 }
 
 // empty array to contain instantiated SalmonStore objects
@@ -59,6 +76,8 @@ let seattle = new SalmonStore (
 );
 // then add it to storeArray to use later
 storeArray.push(seattle);
+// add the store's row to the table
+seattle.renderDataRow();
 
 let tokyo = new SalmonStore (
   'Tokyo',
@@ -67,6 +86,7 @@ let tokyo = new SalmonStore (
   1.2
 );
 storeArray.push(tokyo);
+tokyo.renderDataRow();
 
 let dubai = new SalmonStore (
   'Dubai',
@@ -75,6 +95,7 @@ let dubai = new SalmonStore (
   3.7
 );
 storeArray.push(dubai);
+dubai.renderDataRow();
 
 let paris = new SalmonStore (
   'Paris',
@@ -83,6 +104,7 @@ let paris = new SalmonStore (
   2.3
 );
 storeArray.push(paris);
+paris.renderDataRow();
 
 let lima = new SalmonStore (
   'Lima',
@@ -91,13 +113,4 @@ let lima = new SalmonStore (
   4.6
 );
 storeArray.push(lima);
-
-// function to render all stores at once with a single call using for loop
-// scaleable for any number of stores
-function renderAllStores() {
-  for (let i = 0; i < storeArray.length; i++) {
-  storeArray[i].renderStore();
-  }
-}
-
-renderAllStores();
+lima.renderDataRow();
