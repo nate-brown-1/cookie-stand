@@ -47,13 +47,18 @@ function SalmonStore (name, min, max, avg) {
   }
 }
 
+// empty array to contain instantiated SalmonStore objects
+const storeArray = [];
+
+// create SalmonStore object from constructor prototype
 let seattle = new SalmonStore (
   'Seattle',
   23,
   65,
   6.3
 );
-seattle.renderStore();
+// then add it to storeArray to use later
+storeArray.push(seattle);
 
 let tokyo = new SalmonStore (
   'Tokyo',
@@ -61,7 +66,7 @@ let tokyo = new SalmonStore (
   24,
   1.2
 );
-tokyo.renderStore();
+storeArray.push(tokyo);
 
 let dubai = new SalmonStore (
   'Dubai',
@@ -69,7 +74,7 @@ let dubai = new SalmonStore (
   38,
   3.7
 );
-dubai.renderStore();
+storeArray.push(dubai);
 
 let paris = new SalmonStore (
   'Paris',
@@ -77,7 +82,7 @@ let paris = new SalmonStore (
   38,
   2.3
 );
-paris.renderStore();
+storeArray.push(paris);
 
 let lima = new SalmonStore (
   'Lima',
@@ -85,5 +90,14 @@ let lima = new SalmonStore (
   16,
   4.6
 );
-lima.renderStore();
+storeArray.push(lima);
 
+// function to render all stores at once with a single call using for loop
+// scaleable for any number of stores
+function renderAllStores() {
+  for (let i = 0; i < storeArray.length; i++) {
+  storeArray[i].renderStore();
+  }
+}
+
+renderAllStores();
