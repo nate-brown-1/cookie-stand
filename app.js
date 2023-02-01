@@ -2,10 +2,12 @@
 
 const HOUR_BLOCKS = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+const TOTAL_COOKIES_EACH_HOUR = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
 let storeContainer = document.getElementById('salesDiv');
 
-// create table with javascript
-// works, creates header row with blank first cell followed by times in sequence
+// creates table with header row
+// blank first cell, then times in sequence
 function createStoreTable() {
   let storeTable = document.createElement('table');
   storeTable.setAttribute('id', 'storeTable');
@@ -44,6 +46,7 @@ function SalmonStore (name, min, max, avg) {
     for (let i = 0; i < HOUR_BLOCKS.length; i++) {
       let cookiesThisHour = Math.round(this.avg * this.getRandomNumberOfCustomers());
       this.cookiesThisHourArray.push(cookiesThisHour);
+      TOTAL_COOKIES_EACH_HOUR[i] += cookiesThisHour;
     };
   };
   this.renderDataRow = function() {
@@ -114,3 +117,21 @@ let lima = new SalmonStore (
 );
 storeArray.push(lima);
 lima.renderDataRow();
+
+function createStoreFooterRow() {
+  let storeTable = document.getElementById('storeTable');
+  let storeTableFoot = document.createElement('tfoot');
+  storeTable.appendChild(storeTableFoot);
+  let storeTableFooterRow = document.createElement('tr');
+  storeTableFoot.appendChild(storeTableFooterRow);
+  let tdFooterTotal = document.createElement('td');
+  tdFooterTotal.textContent = 'Totals';
+  storeTableFooterRow.appendChild(tdFooterTotal);
+  let tdFooterCalculatedTotals = document.createElement('td');
+  for (let i = 0; i < HOUR_BLOCKS.length; i++) {
+    let tdFooterCalculatedTotals = document.createElement('td');
+    tdFooterCalculatedTotals.textContent = `${TOTAL_COOKIES_EACH_HOUR[i]}`;
+    storeTableFooterRow.appendChild(tdFooterCalculatedTotals);
+  }
+}
+createStoreFooterRow();
