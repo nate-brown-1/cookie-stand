@@ -27,7 +27,7 @@ function createStoreTable() {
     storeTableHeaderRow.appendChild(tdHeaderHours);
   }
   let tdHeaderDailyTotal = document.createElement('th');
-  tdHeaderDailyTotal.textContent = 'Daily Location Totals';
+  tdHeaderDailyTotal.textContent = 'Daily Location Total';
   storeTableHeaderRow.appendChild(tdHeaderDailyTotal);
   let storeTableBody = document.createElement('tbody');
   storeTableBody.setAttribute('id', 'storeTableBody');
