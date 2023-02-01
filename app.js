@@ -3,6 +3,7 @@
 const HOUR_BLOCKS = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 const TOTAL_COOKIES_EACH_HOUR = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+let allStoresDailyTotal = 0;
 
 let storeContainer = document.getElementById('salesDiv');
 
@@ -16,15 +17,18 @@ function createStoreTable() {
   storeTable.appendChild(storeTableHead);
   let storeTableHeaderRow = document.createElement('tr');
   storeTableHead.appendChild(storeTableHeaderRow);
-  let tdHeaderBlank = document.createElement('td');
+  let tdHeaderBlank = document.createElement('th');
   tdHeaderBlank.textContent = '\u00A0';
   storeTableHeaderRow.appendChild(tdHeaderBlank);
-  let tdHeaderHours = document.createElement('td');
+  let tdHeaderHours = document.createElement('th');
   for (let i = 0; i < HOUR_BLOCKS.length; i++) {
-    let tdHeaderHours = document.createElement('td');
+    let tdHeaderHours = document.createElement('th');
     tdHeaderHours.textContent = `${HOUR_BLOCKS[i]}`;
     storeTableHeaderRow.appendChild(tdHeaderHours);
   }
+  let tdHeaderDailyTotal = document.createElement('th');
+  tdHeaderDailyTotal.textContent = 'Daily Location Totals';
+  storeTableHeaderRow.appendChild(tdHeaderDailyTotal);
   let storeTableBody = document.createElement('tbody');
   storeTableBody.setAttribute('id', 'storeTableBody');
   storeTable.appendChild(storeTableBody);
@@ -64,6 +68,10 @@ function SalmonStore (name, min, max, avg) {
       storeTableDataRow.appendChild(storeTableDataCell);
       cookieTotal += this.cookiesThisHourArray[i];
     };
+    allStoresDailyTotal += cookieTotal;
+    let storeDailyTotal = document.createElement('td');
+    storeDailyTotal.textContent = `${cookieTotal}`;
+    storeTableDataRow.appendChild(storeDailyTotal);
   };
 }
 
@@ -124,14 +132,17 @@ function createStoreFooterRow() {
   storeTable.appendChild(storeTableFoot);
   let storeTableFooterRow = document.createElement('tr');
   storeTableFoot.appendChild(storeTableFooterRow);
-  let tdFooterTotal = document.createElement('td');
+  let tdFooterTotal = document.createElement('th');
   tdFooterTotal.textContent = 'Totals';
   storeTableFooterRow.appendChild(tdFooterTotal);
-  let tdFooterCalculatedTotals = document.createElement('td');
+  let tdFooterCalculatedTotals = document.createElement('th');
   for (let i = 0; i < HOUR_BLOCKS.length; i++) {
-    let tdFooterCalculatedTotals = document.createElement('td');
+    let tdFooterCalculatedTotals = document.createElement('th');
     tdFooterCalculatedTotals.textContent = `${TOTAL_COOKIES_EACH_HOUR[i]}`;
     storeTableFooterRow.appendChild(tdFooterCalculatedTotals);
   }
+  let allStoresTotal = document.createElement('th');
+  allStoresTotal.textContent = `${allStoresDailyTotal}`;
+  storeTableFooterRow.appendChild(allStoresTotal);
 }
 createStoreFooterRow();

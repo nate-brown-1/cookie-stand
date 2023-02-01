@@ -6,6 +6,7 @@ table {
   margin: auto;
   border-style: groove;
   border-width: 3px;
+  text-align: center;
 }
 
 thead {
@@ -13,15 +14,32 @@ thead {
   color: black;
 }
 
-thead td {
+thead th {
   border-style: groove;
   border-width: 3px;
+  padding: 0.3em;
+}
+
+tfoot {
+  background-color: lavender;
+}
+
+tfoot th {
+  border-style: groove;
+  border-width: 3px;
+  padding: 0.3em;
 }
 
 tbody {
   background-color: aquamarine;
   border-style: groove;
   border-width: 3px;
+}
+
+tbody td {
+  border-style: groove;
+  border-width: 3px;
+  padding: 0.3em;
 }
 
 h3 {
