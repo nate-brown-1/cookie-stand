@@ -129,6 +129,7 @@ lima.renderDataRow();
 function createStoreFooterRow() {
   let storeTable = document.getElementById('storeTable');
   let storeTableFoot = document.createElement('tfoot');
+  storeTableFoot.id = 'storeTableFootId';
   storeTable.appendChild(storeTableFoot);
   let storeTableFooterRow = document.createElement('tr');
   storeTableFoot.appendChild(storeTableFooterRow);
@@ -146,3 +147,25 @@ function createStoreFooterRow() {
   storeTableFooterRow.appendChild(allStoresTotal);
 }
 createStoreFooterRow();
+
+let salmonStoreForm = document.querySelector('form');
+
+let handleSubmit = function(event) {
+  event.preventDefault();
+  let newName = event.target.newStoreName.value;
+  let newMin = parseInt(event.target.newStoreMin.value);
+  let newMax = parseInt(event.target.newStoreMax.value);
+  let newAvg = parseFloat(event.target.newStoreMax.value);
+  let addNewStore = new SalmonStore(newName, newMin, newMax, newAvg);
+  storeArray.push(addNewStore);
+  // console.log(storeArray);
+  addNewStore.getRandomNumberOfCustomers();
+  addNewStore.calculateCookiesThisHour();
+  addNewStore.renderDataRow();
+  document.getElementById('storeTableFootId').remove();
+  createStoreFooterRow();
+}
+
+salmonStoreForm.addEventListener('submit', handleSubmit);
+
+// console.log(storeArray);
