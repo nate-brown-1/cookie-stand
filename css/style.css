@@ -66,3 +66,13 @@ ul {
   font-family:'Times New Roman', Times, serif;
   color: darkblue;
 }
+
+#imageblock img {
+  display: block;
+  max-width: 30%;
+}
+
+#background {
+  background: center top / cover url(img/salmon.png);
+  height: 400px;
+}
