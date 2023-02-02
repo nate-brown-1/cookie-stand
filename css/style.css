@@ -72,7 +72,152 @@ ul {
   max-width: 30%;
 }
 
-#background {
-  background: center top / cover url(img/salmon.png);
+header {
+  margin: auto auto 30px auto;
+  background-color: #555;
+}
+
+header nav {
+  margin: auto;
+  width: 960px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  width: 200px;
+  height: auto;
+}
+
+header nav ul {
+  width: 730px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+header nav ul li {
+  width: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  color: #aaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+}
+
+header {
+  margin: auto auto 30px auto;
+  background-color: #555;
+}
+
+header nav {
+  margin: auto;
+  width: 960px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky, top: 0;
+}
+
+header nav a {
+  width: 200px;
+  height: auto;
+}
+
+header nav ul {
+  width: 730px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+header nav ul li {
+  width: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  color: #aaa;
+}
+
+main {
+  margin: auto;
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main img {
+  margin-bottom: 30px;
+}
+
+article {
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+article h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 200;
+}
+
+article section {
+  width: 450px;
+  height: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  overflow: auto;
+}
+
+article div:last-of-type {
+  width: 150px;
+  height: 30px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article a:link {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  text-decoration: none;
+  text-align: center;
+}
+
+footer {
+  margin: auto;
+  background-color: #555;
+}
+
+footer div {
+  margin: auto;
+  height: 150px;
+}
+
+#family {
+  width: 960px;
+}
+
+#background-img {
+  top: 100px;
+  left: 0;
+  opacity: 0.3;
+  z-index: -1;
 }
