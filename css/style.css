@@ -1,6 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: antiquewhite;
+  background: url("../img/salmon.png") no-repeat center center fixed; 
+  background-size: cover;
   margin: auto;
+}
+
+main {
+  margin: auto;
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main img {
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -8,7 +25,6 @@ h1 {
   font-size: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0.5em;
-  text-align: center;
 }
 
 h2 {
@@ -19,8 +35,15 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 #newStoreForm {
   margin: 30px auto 30px auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: aliceblue;
   width: 800px;
 }
 
@@ -90,10 +113,6 @@ tbody td {
   padding: 0.3em;
 }
 
-h3 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 ul {
   font-family:'Times New Roman', Times, serif;
   color: darkblue;
@@ -105,97 +124,52 @@ ul {
 }
 
 header {
-  margin: auto auto 30px auto;
-  background-color: #555;
+  background-color: coral;
+  margin: auto auto auto auto;
 }
 
 header nav {
   margin: auto;
   width: 960px;
-  height: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header nav a {
-  width: 200px;
-  height: auto;
-}
-
-header nav ul {
-  width: 730px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-}
-
-header nav ul li {
-  width: 150px;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: center;
-  color: #aaa;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-header {
-  margin: auto auto 30px auto;
-  background-color: #555;
-}
-
-header nav {
-  margin: auto;
-  width: 960px;
-  height: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky, top: 0;
-}
-
-header nav a {
-  width: 200px;
-  height: auto;
-}
-
-header nav ul {
-  width: 730px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-}
-
-header nav ul li {
-  width: 150px;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: center;
-  color: #aaa;
-}
-
-main {
-  margin: auto;
-  width: 960px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-main img {
-  margin-bottom: 30px;
-}
-
-article {
-  height: 400px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  margin: auto
+  width: 960px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+header nav ul li {
+  width: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  color: darkblue;
+  text-align: center;
+}
+
+#salesbanner {
+  background-color: aliceblue;
+  text-align: center;
+}
+
+article {
+  background-color: aliceblue;
+  height: 324px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 article h2 {
@@ -205,17 +179,18 @@ article h2 {
 }
 
 article section {
-  width: 450px;
-  height: 320px;
+  width: 606px;
+  height: 216px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
+  background-color: aliceblue;
   overflow: auto;
 }
 
 article div:last-of-type {
   width: 150px;
   height: 30px;
-  background-color: black;
+  background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,30 +206,29 @@ article a:link {
 
 footer {
   margin: auto;
-  background-color: #555;
+  background-color: coral;
 }
 
 footer div {
   margin: auto;
-  height: 150px;
+  width: 960px;
+  display: flex;
+  justify-content: center;
 }
 
 #family {
   width: 960px;
 }
 
-#background-img {
-  top: 100px;
-  left: 0;
-  opacity: 0.3;
-  z-index: -1;
-}
-
 button {
   margin: 30px auto auto auto;
 }
 
-#indexLink {
+.indexLink {
+  width:150px;
+  background-color: aliceblue;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin: 30px auto 30px auto;
   text-align: center;
   font-size: large;
