@@ -139,7 +139,7 @@ header nav {
 }
 
 header nav ul {
-  margin: auto
+  margin: auto;
   width: 960px;
   height: auto;
   display: flex;
