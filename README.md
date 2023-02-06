@@ -4,4 +4,4 @@ Salmon Cookie Stand
 
 ## Lighthouse Report
 
-![Lighthouse Report](img/lab06-lighthouse-screenshot.png)
+![Lighthouse Report](img/lighthouse-screenshot-lab10.png)
