@@ -8,13 +8,35 @@
   <title>Salmon Store Sales Page</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <section id="salesbanner">
-  <h1>Salmon Stores Worldwide</h1>
-  <h2>Our salmon cookies are enjoyed on many continents!</h2>
-  </section>
+  <header>
+    <nav>
+      <a href="index.html">
+      </a>
+      <h1>Salmon Stores Worldwide</h1>
+    <h2>Our salmon cookies are enjoyed on many continents!</h2>
+        <ul>
+          <!--- nav ul -->
+          <li>
+            <a href="index.html">Home</a>
+          </li> <!-- Nav Item 1 -->
+          <li>
+            <a href="sales.html">Sales</a>
+          </li> <!-- Nav Item 2 -->
+          <li>
+            <a href="index.html#article">Products</a>
+          </li> <!-- Nav Item 3 -->
+          <li>
+            <a href="index.html#footer">Locations</a>
+          </li> <!-- Nav Item 4 -->
+        </ul>
+      </nav>
+    </header>
   <div id="newStoreForm">
     <aside>
     <form>
@@ -60,10 +82,20 @@
   </div>
   <!-- div container to build table in Javascript -->
   <div id="salesDiv"></div>
-  <!-- escape hatch -->
-  <div class="indexLink">
-  <a href="index.html">Go back home</a>
-  </div>
+  <footer>
+    <div>
+      <p class="locations">
+        We have locations in Seattle, Tokyo, Dubai, Paris, and Lima, with plans to expand elsewhere. All locations are open from 6am-8pm local time.
+      </p>
+      <p class="locations">Seattle: 85 Pike Street, Seattle WA 98101</p>
+      <p class="locations">Tokyo: 1 Chome-6 Chuoko, Chuo Ward, Chiba, 260-0024, Japan</p>
+      <p class="locations">Dubai: Burj Khalifa, 1 Sheikh Mohammed bin Rashid Blvd, Suite 202</p>
+      <p class="locations">Paris: Place Charles-de-Gaulle, 75008 Paris</p>
+      <p class="locations">Lima: Av. Contralmirante Raygada 110. Callao Peru<p>
+    <div>
+      <img src="img/chinook.jpeg">
+    </div>
+  </footer>
   <script src="app.js"></script>
 </body>
 

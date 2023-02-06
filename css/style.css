@@ -20,23 +20,30 @@ main img {
   margin-bottom: 30px;
 }
 
+p {
+  font-family: 'Times New Roman', Times, serif;
+  color: purple;
+}
+
+h1, h2, h3, ul li {
+  font-family: 'Orbitron', sans-serif;
+  color: darkblue;
+}
+
+form, table {
+  font-family: Arial, Helvetica, sans-serif;
+  color: indigo;
+}
+
 h1 {
-  color: black;
   font-size: 2rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0.5em;
 }
 
 h2 {
-  color: blueviolet;
   font-size: 1.5rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-bottom: 0.5em;
   text-align: center;
-}
-
-h3 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #newStoreForm {
@@ -86,7 +93,6 @@ table {
 
 thead {
   background-color: pink;
-  color: black;
 }
 
 thead th {
@@ -111,11 +117,6 @@ tbody {
 tbody td {
   border: 3px groove;
   padding: 0.3em;
-}
-
-ul {
-  font-family:'Times New Roman', Times, serif;
-  color: darkblue;
 }
 
 #imageblock img {
@@ -150,11 +151,9 @@ header nav ul {
 
 header nav ul li {
   width: 150px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
   align-items: center;
   justify-content: center;
-  color: darkblue;
   text-align: center;
 }
 
@@ -213,7 +212,10 @@ footer div {
   margin: auto;
   width: 960px;
   display: flex;
+  padding: 30px;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 #family {
@@ -232,4 +234,10 @@ button {
   margin: 30px auto 30px auto;
   text-align: center;
   font-size: large;
+}
+
+.locations {
+  font-family: 'Orbitron', sans-serif;
+  size: larger;
+  margin: 10px;
 }
