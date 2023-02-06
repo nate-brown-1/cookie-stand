@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Salmon Store Sales Page</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <section id="salesbanner">
+  <h1>Salmon Stores Worldwide</h1>
+  <h2>Our salmon cookies are enjoyed on many continents!</h2>
+  </section>
+  <div id="newStoreForm">
+    <aside>
+    <form>
+      <!-- start form here -->
+      <fieldset>
+        <!-- set form fields -->
+        <legend>
+          <!-- form title -->
+          To add a new Salmon Store, enter all required information into the form.
+        </legend>
+        <div>
+          <span class="formlabel">
+            <label for="name">Store Name</input>
+          </span>
+          <!-- name input -->
+          <input type="text" id="name" name="newStoreName" placeholder="Name"/>
+        </div>
+        <div>
+          <span class="formlabel">
+            <label for="min">Minimum Customers Per Hour</label>
+          </span>
+          <!-- minimum input-->
+          <input type="text" id="min" name="newStoreMin"placeholder="Minimum"/>
+        </div>
+        <div>
+          <span class="formlabel">
+            <label for="max">Maximum Customers Per Hour</label>
+          </span>
+          <!-- maximum input -->
+          <input type="text" id="max" name="newStoreMax" placeholder="Maximum"/>
+        </div>
+        <div>
+          <span class="formlabel">
+            <label for="avg">Average Cookies Per Customer</label>
+          </span>
+          <!-- average input -->
+          <input type="text" id="avg" name="newStoreAvg" placeholder="Average"/>
+        </div>
+      </fieldset>
+      <button type="submit">Add New Store</button>
+    </aside>
+    </form>
+  </div>
+  <!-- div container to build table in Javascript -->
   <div id="salesDiv"></div>
-  <a href="index.html">Index</a>
+  <!-- escape hatch -->
+  <div class="indexLink">
+  <a href="index.html">Go back home</a>
+  </div>
   <script src="app.js"></script>
 </body>
+
 </html>
